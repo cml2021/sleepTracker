@@ -17,7 +17,7 @@ const entrySchema = new Schema({
     timeIntoBed: {type: Date, required: true},
     timeSleepAttempted: {type: Date, required: true},
     numberAwakenings: {type: Number, required: true},
-    durationAwakenings: {type: Number, required: true},
+    durationAwakenings: {type: Number, required: true}, // in minutes
     timeFinalAwakening: {type: Date, required: true},
     timeUp: {type: Date, required: true},
     qualityRating: {type: String, required: true},

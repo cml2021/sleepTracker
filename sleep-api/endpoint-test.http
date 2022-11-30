@@ -1,0 +1,15 @@
+# Create entry
+POST http://localhost:3000/create HTTP/1.1
+content-type: application/json
+
+{
+    "date": "2022-11-29",
+    "timeIntoBed": "2022-11-29T22:30:00.000",
+    "timeSleepAttempted": "2022-11-29T22:50:00.000",
+    "numberAwakenings": 2,
+    "durationAwakenings": 15,
+    "timeFinalAwakening": "2022-11-30T06:45:00.000",
+    "timeUp": "2022-11-30T07:15:00.000",
+    "qualityRating": "Good",
+    "comments": "Slept pretty hard. Some difficulty getting up in the morning."
+}

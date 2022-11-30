@@ -28,5 +28,6 @@ app.post('/create', asyncHandler(async (req, res) => {
         req.body.qualityRating,
         req.body.comments
         );
+    res.type('application/json');
     res.send(response);
 }))
