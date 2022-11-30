@@ -27,3 +27,21 @@ const entrySchema = new Schema({
 // define entry model
 const Entry = mongoose.model('Entry', entrySchema);
 
+// create method
+const createEntry = async (date, timeIntoBed, timeSleepAttempted, numberAwakenings, durationAwakenings, timeFinalAwakening, timeUp, qualityRating, comments) => {
+    const newEntry = new Entry({
+        date: date,
+        timeIntoBed: timeIntoBed,
+        timeSleepAttempted: timeSleepAttempted,
+        numberAwakenings: numberAwakenings,
+        durationAwakenings: durationAwakenings,
+        timeFinalAwakening: timeFinalAwakening,
+        timeUp: timeUp,
+        qualityRating: qualityRating,
+        comments: comments
+    });
+    const savedEntry = await newEntry.save();
+    return savedEntry;
+};
+
+export {createEntry}
