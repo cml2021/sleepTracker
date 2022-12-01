@@ -26,7 +26,10 @@ function EntrySleeptime({ bedtime, sleeptime, setSleeptime }) {
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
-            <Button buttonText={"Next"} />
+            <Button 
+                buttonText={"Next"} 
+                buttonPath={"/entry-sleepdelay"}
+            />
         </div>
     )
 }
