@@ -5,13 +5,16 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function EntryDate({date, setDate}) {
 
+    const onSetDate = (date) => {
+        setDate(date);
+    }
+
     return (
         <div>
             <h2>What night is this entry for?</h2>
-            // TODO fix why not selecting date
             <DatePicker 
                 selected={date} 
-                onChange={(e) => setDate(e.target.value)} 
+                onChange={onSetDate} 
                 popperPlacement="bottom"
                 className="DatePicker"
             />
