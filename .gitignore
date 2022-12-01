@@ -1,2 +1,4 @@
 sleep-api/.env
 sleep-api/node_modules/
+sleep-ui/.env
+sleep-ui/node_modules/
