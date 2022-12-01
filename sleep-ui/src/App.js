@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/entry-date" element={<EntryDate date={date} setDate={setDate} />} />
           <Route path="/entry-bedtime" element={<EntryBedtime date={date} bedtime={bedtime} setBedtime={setBedtime} setSleeptime={setSleeptime} />} />
-          <Route path="/entry-sleeptime" element={<EntrySleeptime sleeptime={sleeptime} setSleeptime={setSleeptime} />} />
+          <Route path="/entry-sleeptime" element={<EntrySleeptime bedtime={bedtime} sleeptime={sleeptime} setSleeptime={setSleeptime} />} />
         </Routes>
       </Router>
     </div>
