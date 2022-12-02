@@ -12,10 +12,10 @@ import EntryWakeupDuration from "./pages/CreateEntry/EntryWakeupDuration";
 import EntryFinalWakeup from "./pages/CreateEntry/EntryFinalWakeup";
 import EntryUptime from "./pages/CreateEntry/EntryUptime";
 import EntrySleepQuality from "./pages/CreateEntry/EntrySleepQuality";
+import EntryComments from "./pages/CreateEntry/EntryComments";
 
 function App() {
 
-  // Try date-fns for date management
   const yesterday = add(new Date(), {days: -1})
   const defaultBedtime = set(yesterday, {hours: 22, minutes: 0, seconds: 0, milliseconds: 0}) // yesterday at 10:00 PM
   const defaultWaketime = set(new Date(), {hours: 6, minutes: 0, seconds: 0, milliseconds: 0}) // today at 6:00 AM
@@ -29,6 +29,8 @@ function App() {
   const [waketime, setWaketime] = useState(defaultWaketime);
   const [uptime, setUptime] = useState(defaultWaketime);
   const [qualityRating, setQualityRating] = useState('');
+  const [comments, setComments] = useState('');
+  const [payload, setPayload] = useState([date, bedtime, sleeptime, sleepdelay, awakenings, awakeningsDuration, waketime, uptime, qualityRating, comments])
 
   return (
     <div>
@@ -44,6 +46,7 @@ function App() {
           <Route path="/entry-final-wake" element={<EntryFinalWakeup waketime={waketime} setWaketime={setWaketime} setUptime={setUptime}/>} />
           <Route path="/entry-final-up" element={<EntryUptime uptime={uptime} setUptime={setUptime}/>} />
           <Route path="/entry-quality" element={<EntrySleepQuality qualityRating={qualityRating} setQualityRating={setQualityRating} />} />
+          <Route path="/entry-comments" element={<EntryComments comments={comments} setComments={setComments} payload={payload}/>} />
         </Routes>
       </Router>
     </div>

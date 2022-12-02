@@ -108,7 +108,7 @@ h2 {
 
 .rating-option, .rating-option-selected {
     height: 50px;
-    background-color: rgb(248, 243, 243);
+    background-color: white;
     text-align: center;
     color: black;
     cursor: pointer;
@@ -132,4 +132,19 @@ h2 {
 .rating-option:last-child, .rating-option-selected:last-child {
     border-radius: 0 20px 20px 0;
     margin-right: 5px;
+}
+
+.comment-field {
+    width: 50%;
+    height: 150px;
+    max-width: 600px;
+    min-width: 300px;
+    display: block;
+    margin: 0 auto;
+    font-size: 1em;
+    font-family: inherit;
+    padding: 10px;
+    resize: none;
+    border-radius: 10px;
+    border: 2px solid lightgray;
 }
