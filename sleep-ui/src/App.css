@@ -94,6 +94,8 @@ h2 {
 
 .rating-scale {
     width: 50%;
+    max-width: 600px;
+    min-width: 450px;
     height: 60px;
     background-color: lightgray;
     margin: 0 auto;
@@ -104,23 +106,30 @@ h2 {
     gap: 5px;
 }
 
-.rating-option {
-    width: 138px;
+.rating-option, .rating-option-selected {
     height: 50px;
-    background-color: rgb(236, 233, 233);
+    background-color: rgb(248, 243, 243);
     text-align: center;
     color: black;
     cursor: pointer;
 }
 
+.rating-option-selected {
+    background-color: #63D2FF;
+    font-weight: 600;
+}
+
 .rating-option:hover {
-    background-color:#63D2FF;
+    background-color: darkgray;
+    font-weight: 600;
 }
 
-.rating-option:first-child {
+.rating-option:first-child, .rating-option-selected:first-child {
     border-radius: 20px 0 0 20px;
+    margin-left: 5px;
 }
 
-.rating-option:last-child {
+.rating-option:last-child, .rating-option-selected:last-child {
     border-radius: 0 20px 20px 0;
+    margin-right: 5px;
 }
