@@ -1,15 +1,20 @@
 import React from "react";
 import Button from "../../ui-components/Button";
 import DatePicker from "react-datepicker";
-import { getTime } from "date-fns";
+import { getTime, add } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 
-function EntrySleeptime({ bedtime, sleeptime, setSleeptime }) {
+function EntrySleeptime({ bedtime, sleeptime, setSleeptime, setWaketime }) {
 
     // constrains selectable sleeptime to times equal to or after the selected bedtime
     const filterBedtime = (time) => {
         const selectedSleeptime = new Date(time);
         return getTime(selectedSleeptime) >= getTime(bedtime);
+    }
+
+    const onSetSleeptime = (sleeptime) => {
+        setSleeptime(sleeptime);
+        setWaketime(add(sleeptime, {hours: 8}))
     }
 
     return (
@@ -18,7 +23,7 @@ function EntrySleeptime({ bedtime, sleeptime, setSleeptime }) {
             <DatePicker
                 className="DatePicker"
                 selected={sleeptime}
-                onChange={(sleeptime) => setSleeptime(sleeptime)}
+                onChange={onSetSleeptime}
                 showTimeSelect
                 showTimeSelectOnly
                 timeIntervals={15}

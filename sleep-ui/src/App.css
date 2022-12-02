@@ -18,6 +18,7 @@ h2 {
     font-weight: 600;
     text-align: center;
     margin: 100px 0 50px 0;
+    padding: 0 300px;
 }
 
 .button-active, .button-disabled {
@@ -58,7 +59,7 @@ h2 {
     font-family: inherit;
 }
 
-.duration-div {
+.input-div {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -72,13 +73,14 @@ h2 {
     color: darkgray;
 }
 
-.duration-input, .duration-input-invalid {
+.duration-input, .duration-input-invalid, input[type="number"] {
     width: 60px;
     height: 60px;
     text-align: center;
     font-size: 25px;
     border-radius: 5px;
     border: 2px solid lightgray;
+    -moz-appearance: textfield;
 }
 
 .duration-input-invalid {

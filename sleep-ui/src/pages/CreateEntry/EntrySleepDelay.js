@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../ui-components/Button";
 import DurationInput from "../../ui-components/DurationInput";
 
@@ -17,15 +17,16 @@ function EntrySleepDelay({ setSleepdelay }) {
         setSleepdelay(totalDelay);
     }
 
+    useEffect( parseDelay, [delayHours, delayMin, setSleepdelay])
+
     return (
         <div>
             <h2>How long did it take you to fall asleep?</h2>
-            <div className="duration-div">
+            <div className="input-div">
                 <DurationInput unit={"hour"} duration={delayHours} setDuration={setDelayHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={delayMin}  setDuration={setDelayMin} setIsValid={setIsValidMin}/>
-                {parseDelay()}
             </div>
-            <Button active={isValidHour && isValidMin} buttonText={"Next"}/>
+            <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/entry-wake-frequency"}/>
         </div>
     )
 };
