@@ -91,3 +91,36 @@ h2 {
 .duration-input-invalid:focus {
     outline: none;
 }
+
+.rating-scale {
+    width: 50%;
+    height: 60px;
+    background-color: lightgray;
+    margin: 0 auto;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.rating-option {
+    width: 138px;
+    height: 50px;
+    background-color: rgb(236, 233, 233);
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+.rating-option:hover {
+    background-color:#63D2FF;
+}
+
+.rating-option:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.rating-option:last-child {
+    border-radius: 0 20px 20px 0;
+}

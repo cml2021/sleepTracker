@@ -22,7 +22,7 @@ function EntryUptime({uptime, setUptime}) {
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
-            <Button buttonText={"Next"}/>
+            <Button buttonText={"Next"} buttonPath={"/entry-quality"}/>
         </div>
     )
 };

@@ -11,6 +11,7 @@ import EntryWakeupFrequency from "./pages/CreateEntry/EntryWakeupFrequency";
 import EntryWakeupDuration from "./pages/CreateEntry/EntryWakeupDuration";
 import EntryFinalWakeup from "./pages/CreateEntry/EntryFinalWakeup";
 import EntryUptime from "./pages/CreateEntry/EntryUptime";
+import EntrySleepQuality from "./pages/CreateEntry/EntrySleepQuality";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
   const [awakeningsDuration, setAwakeningsDuration] = useState(0);
   const [waketime, setWaketime] = useState(defaultWaketime);
   const [uptime, setUptime] = useState(defaultWaketime);
+  const [qualityRating, setQualityRating] = useState('');
 
   return (
     <div>
@@ -41,6 +43,7 @@ function App() {
           <Route path="/entry-wake-duration" element={<EntryWakeupDuration setAwakeningsDuration={setAwakeningsDuration}/>} />
           <Route path="/entry-final-wake" element={<EntryFinalWakeup waketime={waketime} setWaketime={setWaketime} setUptime={setUptime}/>} />
           <Route path="/entry-final-up" element={<EntryUptime uptime={uptime} setUptime={setUptime}/>} />
+          <Route path="/entry-quality" element={<EntrySleepQuality qualityRating={qualityRating} setQualityRating={setQualityRating} />} />
         </Routes>
       </Router>
     </div>
