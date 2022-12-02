@@ -28,9 +28,8 @@ function App() {
   const [awakeningsDuration, setAwakeningsDuration] = useState(0);
   const [waketime, setWaketime] = useState(defaultWaketime);
   const [uptime, setUptime] = useState(defaultWaketime);
-  const [qualityRating, setQualityRating] = useState('');
+  const [qualityRating, setQualityRating] = useState('Fair');
   const [comments, setComments] = useState('');
-  const [payload, setPayload] = useState([date, bedtime, sleeptime, sleepdelay, awakenings, awakeningsDuration, waketime, uptime, qualityRating, comments])
 
   return (
     <div>
@@ -46,7 +45,7 @@ function App() {
           <Route path="/entry-final-wake" element={<EntryFinalWakeup waketime={waketime} setWaketime={setWaketime} setUptime={setUptime}/>} />
           <Route path="/entry-final-up" element={<EntryUptime uptime={uptime} setUptime={setUptime}/>} />
           <Route path="/entry-quality" element={<EntrySleepQuality qualityRating={qualityRating} setQualityRating={setQualityRating} />} />
-          <Route path="/entry-comments" element={<EntryComments comments={comments} setComments={setComments} payload={payload}/>} />
+          <Route path="/entry-comments" element={<EntryComments comments={comments} setComments={setComments} payload={[date, bedtime, sleeptime, sleepdelay, awakenings, awakeningsDuration, waketime, uptime, qualityRating, comments]}/>} />
         </Routes>
       </Router>
     </div>
