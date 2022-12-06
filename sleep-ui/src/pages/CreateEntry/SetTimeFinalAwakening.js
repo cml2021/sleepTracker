@@ -3,11 +3,11 @@ import Button from "../../ui-components/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function EntryFinalWakeup({waketime, setWaketime, setUptime}) {
+function SetTimeFinalAwakening({timeFinalAwakening, setTimeFinalAwakening, setTimeOutOfBed}) {
 
-    const onSetWaketime = (waketime) => {
-        setWaketime(waketime);
-        setUptime(waketime);
+    const onSetWaketime = (timeFinalAwakening) => {
+        setTimeFinalAwakening(timeFinalAwakening);
+        setTimeOutOfBed(timeFinalAwakening);
     }
 
     return (
@@ -15,7 +15,7 @@ function EntryFinalWakeup({waketime, setWaketime, setUptime}) {
             <h2>What time was your final awakening?</h2>
             <DatePicker
                 className="DatePicker"
-                selected={waketime}
+                selected={timeFinalAwakening}
                 onChange={onSetWaketime}
                 showTimeSelect
                 showTimeSelectOnly
@@ -23,9 +23,9 @@ function EntryFinalWakeup({waketime, setWaketime, setUptime}) {
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
-            <Button buttonText={"Next"} buttonPath={"/entry-final-up"}/>
+            <Button buttonText={"Next"} buttonPath={"/new-entry/time-out-of-bed"}/>
         </div>
     )
 };
 
-export default EntryFinalWakeup;
+export default SetTimeFinalAwakening;

@@ -4,17 +4,17 @@ import DatePicker from "react-datepicker";
 import { getTime, add } from "date-fns";
 import "react-datepicker/dist/react-datepicker.css";
 
-function EntrySleeptime({ bedtime, sleeptime, setSleeptime, setWaketime }) {
+function SetSleepTimeAttempted({ timeIntoBed, timeSleepAttempted, setTimeSleepAttempted, setTimeFinalAwakening }) {
 
     // constrains selectable sleeptime to times equal to or after the selected bedtime
     const filterBedtime = (time) => {
         const selectedSleeptime = new Date(time);
-        return getTime(selectedSleeptime) >= getTime(bedtime);
+        return getTime(selectedSleeptime) >= getTime(timeIntoBed);
     }
 
-    const onSetSleeptime = (sleeptime) => {
-        setSleeptime(sleeptime);
-        setWaketime(add(sleeptime, {hours: 8}))
+    const onSetSleeptime = (timeSleepAttempted) => {
+        setTimeSleepAttempted(timeSleepAttempted);
+        setTimeFinalAwakening(add(timeSleepAttempted, {hours: 8}))
     }
 
     return (
@@ -22,7 +22,7 @@ function EntrySleeptime({ bedtime, sleeptime, setSleeptime, setWaketime }) {
             <h2>What time did you try to go to sleep?</h2>
             <DatePicker
                 className="DatePicker"
-                selected={sleeptime}
+                selected={timeSleepAttempted}
                 onChange={onSetSleeptime}
                 showTimeSelect
                 showTimeSelectOnly
@@ -33,10 +33,10 @@ function EntrySleeptime({ bedtime, sleeptime, setSleeptime, setWaketime }) {
             />
             <Button 
                 buttonText={"Next"} 
-                buttonPath={"/entry-sleepdelay"}
+                buttonPath={"/new-entry/sleep-delay"}
             />
         </div>
     )
 }
 
-export default EntrySleeptime;
+export default SetSleepTimeAttempted;

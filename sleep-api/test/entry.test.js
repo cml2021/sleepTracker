@@ -21,7 +21,7 @@ describe("Entry model methods", () => {
             expect(response["numberAwakenings"]).to.equal(2);
             expect(response["durationAwakenings"]).to.equal(15);
             expect(response["timeFinalAwakening"].getTime()).to.equal(new Date("2022-11-30T13:45:00.000Z").getTime());
-            expect(response["timeUp"].getTime()).to.equal(new Date("2022-11-30T14:15:00.000Z").getTime());
+            expect(response["timeOutOfBed"].getTime()).to.equal(new Date("2022-11-30T14:15:00.000Z").getTime());
             expect(response["qualityRating"]).to.equal("Good");
             expect(response["comments"]).to.equal("Slept pretty hard. Some difficulty getting up in the morning.");
         })

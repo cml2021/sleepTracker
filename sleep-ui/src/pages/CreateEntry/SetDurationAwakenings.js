@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import DurationInput from "../../ui-components/DurationInput";
 import Button from "../../ui-components/Button";
 
-function EntryWakeupDuration({setAwakeningsDuration}) {
+function SetDurationAwakenings({setDurationAwakenings}) {
 
     const [awakeHours, setAwakeHours] = useState("00");
     const [awakeMin, setAwakeMin] = useState("00");
@@ -14,10 +14,10 @@ function EntryWakeupDuration({setAwakeningsDuration}) {
         const hoursToMin = hours * 60;
         const min = parseInt(awakeMin);
         const totalDuration = hoursToMin + min;
-        setAwakeningsDuration(totalDuration);
+        setDurationAwakenings(totalDuration);
     }
 
-    useEffect( parseDelay, [awakeHours, awakeMin, setAwakeningsDuration])
+    useEffect( parseDelay, [awakeHours, awakeMin, setDurationAwakenings])
 
     return (
         <div>
@@ -26,9 +26,9 @@ function EntryWakeupDuration({setAwakeningsDuration}) {
                 <DurationInput unit={"hour"} duration={awakeHours} setDuration={setAwakeHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={awakeMin}  setDuration={setAwakeMin} setIsValid={setIsValidMin}/>
             </div>
-            <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/entry-final-wake"}/>
+            <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/new-entry/time-final-awakening"}/>
         </div>
     )
 };
 
-export default EntryWakeupDuration;
+export default SetDurationAwakenings;

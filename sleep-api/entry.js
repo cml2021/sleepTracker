@@ -19,7 +19,7 @@ const entrySchema = new Schema({
     numberAwakenings: {type: Number, required: true},
     durationAwakenings: {type: Number, required: true}, // in minutes
     timeFinalAwakening: {type: Date, required: true},
-    timeUp: {type: Date, required: true},
+    timeOutOfBed: {type: Date, required: true},
     qualityRating: {type: String, required: true},
     comments: String
 });
@@ -28,7 +28,7 @@ const entrySchema = new Schema({
 const Entry = mongoose.model('Entry', entrySchema);
 
 // create method
-const createEntry = async (date, timeIntoBed, timeSleepAttempted, numberAwakenings, durationAwakenings, timeFinalAwakening, timeUp, qualityRating, comments) => {
+const createEntry = async (date, timeIntoBed, timeSleepAttempted, numberAwakenings, durationAwakenings, timeFinalAwakening, timeOutOfBed, qualityRating, comments) => {
     const newEntry = new Entry({
         date: date,
         timeIntoBed: timeIntoBed,
@@ -36,7 +36,7 @@ const createEntry = async (date, timeIntoBed, timeSleepAttempted, numberAwakenin
         numberAwakenings: numberAwakenings,
         durationAwakenings: durationAwakenings,
         timeFinalAwakening: timeFinalAwakening,
-        timeUp: timeUp,
+        timeOutOfBed: timeOutOfBed,
         qualityRating: qualityRating,
         comments: comments
     });

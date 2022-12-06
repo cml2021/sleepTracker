@@ -24,7 +24,7 @@ app.post('/create', asyncHandler(async (req, res) => {
         req.body.numberAwakenings,
         req.body.durationAwakenings,
         req.body.timeFinalAwakening,
-        req.body.timeUp,
+        req.body.timeOutOfBed,
         req.body.qualityRating,
         req.body.comments
         );

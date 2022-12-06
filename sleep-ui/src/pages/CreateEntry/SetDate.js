@@ -3,7 +3,7 @@ import Button from "../../ui-components/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function EntryDate({date, setDate}) {
+function SetDate({date, setDate}) {
 
     const onSetDate = (date) => {
         setDate(date);
@@ -20,10 +20,10 @@ function EntryDate({date, setDate}) {
             />
             <Button 
                 buttonText={"Next"} 
-                buttonPath={"/entry-bedtime"}
+                buttonPath={"/new-entry/time-into-bed"}
             />
         </div>
     )
 };
 
-export default EntryDate;
+export default SetDate;

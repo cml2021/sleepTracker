@@ -3,7 +3,7 @@ import CommentField from "../../ui-components/CommentField";
 import Button from "../../ui-components/Button";
 import {useNavigate} from "react-router-dom";
 
-function EntryComments({comments, setComments, payload}) {
+function SetComments({comments, setComments, payload}) {
 
     const navigate = useNavigate();
 
@@ -11,15 +11,15 @@ function EntryComments({comments, setComments, payload}) {
 
     const saveEntry = async (e) => {
         e.preventDefault();
-        const [date, bedtime, sleeptime, sleepdelay, awakenings, awakeningsDuration, waketime, uptime, qualityRating, comments] = payload;
+        const [date, timeIntoBed, sleeptime, sleepDelay, numberAwakenings, durationAwakenings, timeFinalAwakening, timeOutOfBed, qualityRating, comments] = payload;
         const data = {
             date: date,
-            timeIntoBed: bedtime,
+            timeIntoBed: timeIntoBed,
             timeSleepAttempted: sleeptime,
-            numberAwakenings: awakenings,
-            durationAwakenings: awakeningsDuration,
-            timeFinalAwakening: waketime,
-            timeUp: uptime,
+            numberAwakenings: numberAwakenings,
+            durationAwakenings: durationAwakenings,
+            timeFinalAwakening: timeFinalAwakening,
+            timeOutOfBed: timeOutOfBed,
             qualityRating: qualityRating,
             comments: comments
         };
@@ -42,4 +42,4 @@ function EntryComments({comments, setComments, payload}) {
     )
 };
 
-export default EntryComments;
+export default SetComments;

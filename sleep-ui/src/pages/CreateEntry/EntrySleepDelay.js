@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../../ui-components/Button";
 import DurationInput from "../../ui-components/DurationInput";
 
-function EntrySleepDelay({ setSleepdelay }) {
+function EntrySleepDelay({ setSleepDelay }) {
 
     const [delayHours, setDelayHours] = useState("00");
     const [delayMin, setDelayMin] = useState("00");
@@ -14,10 +14,10 @@ function EntrySleepDelay({ setSleepdelay }) {
         const hoursToMin = hours * 60;
         const min = parseInt(delayMin);
         const totalDelay = hoursToMin + min;
-        setSleepdelay(totalDelay);
+        setSleepDelay(totalDelay);
     }
 
-    useEffect( parseDelay, [delayHours, delayMin, setSleepdelay])
+    useEffect( parseDelay, [delayHours, delayMin, setSleepDelay])
 
     return (
         <div>
@@ -26,7 +26,7 @@ function EntrySleepDelay({ setSleepdelay }) {
                 <DurationInput unit={"hour"} duration={delayHours} setDuration={setDelayHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={delayMin}  setDuration={setDelayMin} setIsValid={setIsValidMin}/>
             </div>
-            <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/entry-wake-frequency"}/>
+            <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/new-entry/number-awakenings"}/>
         </div>
     )
 };

@@ -2,16 +2,16 @@ import React from "react";
 import Button from "../../ui-components/Button";
 import NumberInput from "../../ui-components/NumberInput";
 
-function EntryWakeupFrequency({awakenings, setAwakenings}) {
+function SetNumberAwakenings({numberAwakenings, setNumberAwakenings}) {
     return (
         <div>
             <h2>How many times did you wake up, not counting your final awakening?</h2>
             <div className="input-div">
-                <NumberInput input={awakenings} inputChange={setAwakenings}/>
+                <NumberInput input={numberAwakenings} inputChange={setNumberAwakenings}/>
             </div>
-            <Button buttonText={"Next"} buttonPath={"/entry-wake-duration"}/>
+            <Button buttonText={"Next"} buttonPath={"/new-entry/duration-awakenings"}/>
         </div>
     )
 };
 
-export default EntryWakeupFrequency;
+export default SetNumberAwakenings;

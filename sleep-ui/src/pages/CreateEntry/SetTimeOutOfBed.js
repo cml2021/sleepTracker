@@ -3,10 +3,10 @@ import Button from "../../ui-components/Button";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-function EntryUptime({uptime, setUptime}) {
+function SetTimeOutOfBed({timeOutOfBed, setTimeOutOfBed}) {
 
-    const onSetUptime = (uptime) => {
-        setUptime(uptime);
+    const onSetUptime = (timeOutOfBed) => {
+        setTimeOutOfBed(timeOutOfBed);
     }
 
     return (
@@ -14,7 +14,7 @@ function EntryUptime({uptime, setUptime}) {
             <h2>What time did you get out of bed for the day?</h2>
             <DatePicker
                 className="DatePicker"
-                selected={uptime}
+                selected={timeOutOfBed}
                 onChange={onSetUptime}
                 showTimeSelect
                 showTimeSelectOnly
@@ -22,9 +22,9 @@ function EntryUptime({uptime, setUptime}) {
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
-            <Button buttonText={"Next"} buttonPath={"/entry-quality"}/>
+            <Button buttonText={"Next"} buttonPath={"/new-entry/quality-rating"}/>
         </div>
     )
 };
 
-export default EntryUptime;
+export default SetTimeOutOfBed;
