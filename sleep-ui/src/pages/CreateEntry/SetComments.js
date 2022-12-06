@@ -35,8 +35,10 @@ function SetComments({comments, setComments, payload}) {
     }
 
     return (
-        <div>
-            <h2>Comments</h2>
+        <div className="container">
+            <div className="title">
+                <h2>Comments</h2>
+            </div>
             <CommentField placeholder={placeholder} comments={comments} setComments={setComments}/>
             <Button buttonText={"Submit"} isSubmit={true} onSubmit={saveEntry}/>
         </div>

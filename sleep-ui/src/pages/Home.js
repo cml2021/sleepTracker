@@ -5,8 +5,7 @@ function Home() {
 
     return (
         <div>
-            <h1>How did you sleep?</h1>
-            <Button buttonText={'New sleep log'} buttonPath={'/new-entry/date'}/>
+            <Button buttonText={"Add log"} buttonPath={'/new-entry/date'}/>
         </div>
     )
 };

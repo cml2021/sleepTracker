@@ -10,14 +10,18 @@ function SetDate({date, setDate}) {
     }
 
     return (
-        <div>
-            <h2>What night is this entry for?</h2>
-            <DatePicker 
+        <div className="container">
+            <div className="title">
+                <h2>What night is this entry for?</h2>
+            </div> 
+            <div className="input">
+                <DatePicker 
                 selected={date} 
                 onChange={onSetDate} 
                 popperPlacement="bottom"
                 className="DatePicker"
-            />
+                />
+            </div>
             <Button 
                 buttonText={"Next"} 
                 buttonPath={"/new-entry/time-into-bed"}

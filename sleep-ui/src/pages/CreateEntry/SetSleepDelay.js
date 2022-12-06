@@ -20,8 +20,10 @@ function SetSleepDelay({ setSleepDelay }) {
     useEffect( parseDelay, [delayHours, delayMin, setSleepDelay])
 
     return (
-        <div>
-            <h2>How long did it take you to fall asleep?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>How long did it take you to fall asleep?</h2>
+            </div>
             <div className="input-div">
                 <DurationInput unit={"hour"} duration={delayHours} setDuration={setDelayHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={delayMin}  setDuration={setDelayMin} setIsValid={setIsValidMin}/>

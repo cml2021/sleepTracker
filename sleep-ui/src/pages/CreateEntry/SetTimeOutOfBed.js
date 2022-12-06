@@ -10,8 +10,10 @@ function SetTimeOutOfBed({timeOutOfBed, setTimeOutOfBed}) {
     }
 
     return (
-        <div>
-            <h2>What time did you get out of bed for the day?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>What time did you get out of bed for the day?</h2>
+            </div>
             <DatePicker
                 className="DatePicker"
                 selected={timeOutOfBed}

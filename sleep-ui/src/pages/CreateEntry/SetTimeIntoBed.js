@@ -37,8 +37,10 @@ function SetTimeIntoBed({ date, timeIntoBed, setTimeIntoBed, setTimeSleepAttempt
     };
 
     return (
-        <div>
-            <h2>What time did you get into bed?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>What time did you get into bed?</h2>
+            </div>
             <DatePicker
                 className="DatePicker"
                 selected={timeIntoBed}

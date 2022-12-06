@@ -20,12 +20,17 @@ function SetDurationAwakenings({setDurationAwakenings}) {
     useEffect( parseDelay, [awakeHours, awakeMin, setDurationAwakenings])
 
     return (
-        <div>
-            <h2>In total, how long did these awakenings last?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>In total, how long did these awakenings last?</h2>
+            </div>
+            <div className="input">
             <div className="input-div">
                 <DurationInput unit={"hour"} duration={awakeHours} setDuration={setAwakeHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={awakeMin}  setDuration={setAwakeMin} setIsValid={setIsValidMin}/>
             </div>
+            </div>
+            
             <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/new-entry/time-final-awakening"}/>
         </div>
     )

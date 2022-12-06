@@ -11,8 +11,10 @@ function SetTimeFinalAwakening({timeFinalAwakening, setTimeFinalAwakening, setTi
     }
 
     return (
-        <div>
-            <h2>What time was your final awakening?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>What time was your final awakening?</h2>
+            </div>
             <DatePicker
                 className="DatePicker"
                 selected={timeFinalAwakening}

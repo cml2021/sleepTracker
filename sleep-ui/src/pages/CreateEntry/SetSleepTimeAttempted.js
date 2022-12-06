@@ -18,8 +18,10 @@ function SetSleepTimeAttempted({ timeIntoBed, timeSleepAttempted, setTimeSleepAt
     }
 
     return (
-        <div>
-            <h2>What time did you try to go to sleep?</h2>
+        <div className="container">
+            <div className="title">
+                <h2>What time did you try to go to sleep?</h2>
+            </div>
             <DatePicker
                 className="DatePicker"
                 selected={timeSleepAttempted}
