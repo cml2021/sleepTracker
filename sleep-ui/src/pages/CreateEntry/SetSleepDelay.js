@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "../../ui-components/Button";
 import DurationInput from "../../ui-components/DurationInput";
 
-function EntrySleepDelay({ setSleepDelay }) {
+function SetSleepDelay({ setSleepDelay }) {
 
     const [delayHours, setDelayHours] = useState("00");
     const [delayMin, setDelayMin] = useState("00");
@@ -31,4 +31,4 @@ function EntrySleepDelay({ setSleepDelay }) {
     )
 };
 
-export default EntrySleepDelay;
+export default SetSleepDelay;

@@ -16,6 +16,7 @@ function SetComments({comments, setComments, payload}) {
             date: date,
             timeIntoBed: timeIntoBed,
             timeSleepAttempted: sleeptime,
+            sleepDelay: sleepDelay,
             numberAwakenings: numberAwakenings,
             durationAwakenings: durationAwakenings,
             timeFinalAwakening: timeFinalAwakening,

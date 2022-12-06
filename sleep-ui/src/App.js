@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import SetDate from "./pages/CreateEntry/SetDate";
 import SetTimeIntoBed from "./pages/CreateEntry/SetTimeIntoBed";
 import SetSleepTimeAttempted from "./pages/CreateEntry/SetSleepTimeAttempted";
-import EntrySleepDelay from "./pages/CreateEntry/EntrySleepDelay";
+import SetSleepDelay from "./pages/CreateEntry/SetSleepDelay";
 import SetNumberAwakenings from "./pages/CreateEntry/SetNumberAwakenings";
 import SetDurationAwakenings from "./pages/CreateEntry/SetDurationAwakenings";
 import SetTimeFinalAwakening from "./pages/CreateEntry/SetTimeFinalAwakening";
@@ -39,7 +39,7 @@ function App() {
           <Route path="/new-entry/date" element={<SetDate date={date} setDate={setDate} />} />
           <Route path="/new-entry/time-into-bed" element={<SetTimeIntoBed date={date} timeIntoBed={timeIntoBed} setTimeIntoBed={setTimeIntoBed} setTimeSleepAttempted={setTimeSleepAttempted} />} />
           <Route path="/new-entry/time-sleep-attempted" element={<SetSleepTimeAttempted timeIntoBed={timeIntoBed} timeSleepAttempted={timeSleepAttempted} setTimeSleepAttempted={setTimeSleepAttempted} setTimeFinalAwakening={setTimeFinalAwakening} />} />
-          <Route path="/new-entry/sleep-delay" element={<EntrySleepDelay setSleepDelay={setSleepDelay}/>}/>
+          <Route path="/new-entry/sleep-delay" element={<SetSleepDelay setSleepDelay={setSleepDelay}/>}/>
           <Route path="/new-entry/number-awakenings" element={<SetNumberAwakenings numberAwakenings={numberAwakenings} setNumberAwakenings={setNumberAwakenings} />} />
           <Route path="/new-entry/duration-awakenings" element={<SetDurationAwakenings setDurationAwakenings={setDurationAwakenings}/>} />
           <Route path="/new-entry/time-final-awakening" element={<SetTimeFinalAwakening timeFinalAwakening={timeFinalAwakening} setTimeFinalAwakening={setTimeFinalAwakening} setTimeOutOfBed={setTimeOutOfBed}/>} />

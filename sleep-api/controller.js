@@ -21,6 +21,7 @@ app.post('/create', asyncHandler(async (req, res) => {
         req.body.date, 
         req.body.timeIntoBed, 
         req.body.timeSleepAttempted, 
+        req.body.sleepDelay,
         req.body.numberAwakenings,
         req.body.durationAwakenings,
         req.body.timeFinalAwakening,
