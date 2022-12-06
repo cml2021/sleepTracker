@@ -5,15 +5,20 @@
   "main": "controller.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "nodemon controller.js"
+  },
+  "directories": {
+    "test": "./test"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.7",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
+    "mocha": "^10.1.0",
     "mongoose": "^6.7.4",
     "nodemon": "^2.0.20"
   }
