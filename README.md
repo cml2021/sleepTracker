@@ -32,4 +32,4 @@ Visit app: `localhost:8000`
 
 ## Background
 
-This was a project built while completing Oregon State University's [CS290](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?termcode=all&subject=CS&coursenumber=290) course on Web Development. It was intended to help me reinforce the concepts learned in class and gain familiarity with the MERN stack.  
+This was a project built while completing Oregon State University's [CS290](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?termcode=all&subject=CS&coursenumber=290) course on Web Development. It was intended to help reinforce the concepts learned in class and gain familiarity with the MERN stack.  
