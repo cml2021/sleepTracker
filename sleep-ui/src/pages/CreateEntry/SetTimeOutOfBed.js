@@ -14,6 +14,7 @@ function SetTimeOutOfBed({timeOutOfBed, setTimeOutOfBed}) {
             <div className="title">
                 <h2>What time did you get out of bed for the day?</h2>
             </div>
+            <div className="input">
             <DatePicker
                 className="DatePicker"
                 selected={timeOutOfBed}
@@ -24,6 +25,8 @@ function SetTimeOutOfBed({timeOutOfBed, setTimeOutOfBed}) {
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
+            </div>
+            
             <Button buttonText={"Next"} buttonPath={"/new-entry/quality-rating"}/>
         </div>
     )

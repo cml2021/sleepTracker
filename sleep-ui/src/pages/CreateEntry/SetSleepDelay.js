@@ -24,10 +24,13 @@ function SetSleepDelay({ setSleepDelay }) {
             <div className="title">
                 <h2>How long did it take you to fall asleep?</h2>
             </div>
+            <div className="input">
             <div className="input-div">
                 <DurationInput unit={"hour"} duration={delayHours} setDuration={setDelayHours} setIsValid={setIsValidHour}/>
                 <DurationInput unit={"min"} duration={delayMin}  setDuration={setDelayMin} setIsValid={setIsValidMin}/>
             </div>
+            </div>
+            
             <Button active={isValidHour && isValidMin} buttonText={"Next"} buttonPath={"/new-entry/number-awakenings"}/>
         </div>
     )

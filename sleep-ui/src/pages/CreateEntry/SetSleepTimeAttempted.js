@@ -22,6 +22,7 @@ function SetSleepTimeAttempted({ timeIntoBed, timeSleepAttempted, setTimeSleepAt
             <div className="title">
                 <h2>What time did you try to go to sleep?</h2>
             </div>
+            <div className="input">
             <DatePicker
                 className="DatePicker"
                 selected={timeSleepAttempted}
@@ -33,6 +34,8 @@ function SetSleepTimeAttempted({ timeIntoBed, timeSleepAttempted, setTimeSleepAt
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
+            </div>
+            
             <Button 
                 buttonText={"Next"} 
                 buttonPath={"/new-entry/sleep-delay"}

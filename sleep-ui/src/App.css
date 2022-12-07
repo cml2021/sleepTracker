@@ -33,7 +33,6 @@ h2 {
 
 .title {
     height: 150px;
-    border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +40,6 @@ h2 {
 
 .input {
     height: 100px;
-    border: 1px solid green;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,11 +127,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
 .rating-option, .rating-option-selected {
-    height: 50px;
+    height: 53px;
     background-color: white;
     text-align: center;
     color: black;
@@ -142,27 +140,25 @@ h2 {
 
 .rating-option-selected {
     background-color: #63D2FF;
-    font-weight: 600;
 }
 
 .rating-option:hover {
     background-color: darkgray;
-    font-weight: 600;
 }
 
 .rating-option:first-child, .rating-option-selected:first-child {
     border-radius: 20px 0 0 20px;
-    margin-left: 5px;
+    margin-left: 2px;
 }
 
 .rating-option:last-child, .rating-option-selected:last-child {
     border-radius: 0 20px 20px 0;
-    margin-right: 5px;
+    margin-right: 2px;
 }
 
 .comment-field {
+    height: 75px;
     width: 50%;
-    height: 150px;
     max-width: 600px;
     min-width: 300px;
     display: block;

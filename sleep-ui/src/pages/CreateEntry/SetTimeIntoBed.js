@@ -41,6 +41,7 @@ function SetTimeIntoBed({ date, timeIntoBed, setTimeIntoBed, setTimeSleepAttempt
             <div className="title">
                 <h2>What time did you get into bed?</h2>
             </div>
+            <div className="input">
             <DatePicker
                 className="DatePicker"
                 selected={timeIntoBed}
@@ -51,6 +52,8 @@ function SetTimeIntoBed({ date, timeIntoBed, setTimeIntoBed, setTimeSleepAttempt
                 dateFormat="h:mm aa"
                 popperPlacement="bottom"
             />
+            </div>
+            
             <Button
                 buttonText={"Next"}
                 buttonPath={"/new-entry/time-sleep-attempted"}
