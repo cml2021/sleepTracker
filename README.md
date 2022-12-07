@@ -2,13 +2,9 @@
 
 A simple application to create a sleep diary entry based on the [Consensus Sleep Diary](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3250369/) for insomnia. Built with React, Express, and MongoDB.
 
-## Project Status
+## Background
 
-Work in progress. 
-
-Next steps:
-- Add unit tests
-- Expand to display sleep efficiency data
+This was a project built while completing Oregon State University's [CS290](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?termcode=all&subject=CS&coursenumber=290) course on Web Development. It was intended to help reinforce the concepts learned in class and gain familiarity with the MERN stack.  
 
 ## Screenshots
 
@@ -29,7 +25,3 @@ Installation: `npm install`
 Start server: `npm start`
 
 Visit app: `localhost:8000`
-
-## Background
-
-This was a project built while completing Oregon State University's [CS290](https://ecampus.oregonstate.edu/soc/ecatalog/ecoursedetail.htm?termcode=all&subject=CS&coursenumber=290) course on Web Development. It was intended to help reinforce the concepts learned in class and gain familiarity with the MERN stack.  
