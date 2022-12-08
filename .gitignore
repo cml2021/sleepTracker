@@ -1,4 +1,6 @@
 sleep-api/.env
+sleep-api/.env.test
+sleep-api/.env.development
 sleep-api/node_modules/
 sleep-ui/.env
 sleep-ui/node_modules/
