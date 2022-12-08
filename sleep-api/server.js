@@ -16,7 +16,7 @@ app.listen(PORT, (req, res) => {
 // Endpoints
 
 // Create entry
-app.post('/create', asyncHandler(async (req, res) => {
+app.post('/diary', asyncHandler(async (req, res) => {
     const response = await entry.createEntry(
         req.body.date, 
         req.body.timeIntoBed, 

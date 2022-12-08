@@ -2,24 +2,35 @@
   "name": "sleep-api",
   "version": "1.0.0",
   "description": "",
-  "main": "controller.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "mocha",
-    "start": "nodemon controller.js"
-  },
-  "directories": {
-    "test": "./test"
+    "test": "dotenv -e .env.test mocha --exit",
+    "start-dev": "dotenv -e .env.development nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chai": "^4.3.7",
-    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
-    "mocha": "^10.1.0",
     "mongoose": "^6.7.4",
     "nodemon": "^2.0.20"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "dotenv-cli": "^6.0.0",
+    "mocha": "^10.1.0"
+  },
+  "mocha": {
+    "diff": true,
+    "extension": ["js", "cjs", "mjs"],
+    "package": "./package.json",
+    "reporter": "spec",
+    "slow": "75",
+    "timeout": "2000",
+    "ui": "bdd",
+    "watch-files": ["lib/**/*.js", "test/**/*.js"],
+    "watch-ignore": ["lib/vendor"]
   }
 }
