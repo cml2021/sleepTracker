@@ -5,13 +5,24 @@ import dotenv from "dotenv";
 dotenv.config();
 const DB_URL = process.env.DB_URL;
 
-mongoose.connect(DB_URL).then(
-    () => { console.log("Database connected...") },
-    error => { console.log(error) }
-);
+// connect to database
+const connect = async () => {
+    await mongoose.connect(DB_URL);
+    console.log("Database connected...")
+};
 
+// clear database
+const clear = async () => {
+    const collections = mongoose.connection.collections;
+    for (const key in collections) {
+        const collection = collections[key];
+        await collection.deleteMany();
+    }
+}
 
-// Define entry schema
+connect();
+
+// Define diary entry schema
 const entrySchema = new Schema({
     date: { type: Date, required: true },                 // The date of the morning the user is adding the entry      
     timeIntoBed: { type: Date, required: true },          // The time the user got into bed
@@ -28,11 +39,11 @@ const entrySchema = new Schema({
     sleepEfficiency: Number                               // The percentage of the time in bed that the user spent asleep
 });
 
-// define entry model
+// define diary entry model
 const Entry = mongoose.model('Entry', entrySchema);
 
 /**
- * Method to create a new entry instance in the database
+ * Method to create a new diary entry instance in the database
  * 
  * @param {date} date                   The date of the morning the user is adding the entry
  * @param {date} timeIntoBed            The time the user got into bed
@@ -63,4 +74,4 @@ const createEntry = async (date, timeIntoBed, timeSleepAttempted, sleepDelay, nu
     return savedEntry;
 };
 
-export { createEntry }
+export {clear, createEntry}

@@ -13,9 +13,14 @@ app.listen(PORT, (req, res) => {
     console.log(`Listening on port ${PORT}...`)
 });
 
-// Endpoints
+// API Endpoints
 
-// Create entry
+// Get test
+app.get('/', (req, res) => {
+    res.send("success");
+})
+
+// Create diary entry
 app.post('/diary', asyncHandler(async (req, res) => {
     const response = await entry.createEntry(
         req.body.date, 
@@ -30,5 +35,8 @@ app.post('/diary', asyncHandler(async (req, res) => {
         req.body.comments
         );
     res.type('application/json');
+    res.status(201);
     res.send(response);
-}))
+}));
+
+export default app;
