@@ -15,28 +15,28 @@ app.listen(PORT, (req, res) => {
 
 // API Endpoints
 
-// Get test
-app.get('/', (req, res) => {
-    res.send("success");
-})
-
 // Create diary entry
 app.post('/diary', asyncHandler(async (req, res) => {
-    const response = await entry.createEntry(
-        req.body.date, 
-        req.body.timeIntoBed, 
-        req.body.timeSleepAttempted, 
-        req.body.sleepDelay,
-        req.body.numberAwakenings,
-        req.body.durationAwakenings,
-        req.body.timeFinalAwakening,
-        req.body.timeOutOfBed,
-        req.body.qualityRating,
-        req.body.comments
-        );
-    res.type('application/json');
-    res.status(201);
-    res.send(response);
+    try {
+        const response = await entry.createEntry(
+            req.body.date, 
+            req.body.timeIntoBed, 
+            req.body.timeSleepAttempted, 
+            req.body.sleepDelay,
+            req.body.numberAwakenings,
+            req.body.durationAwakenings,
+            req.body.timeFinalAwakening,
+            req.body.timeOutOfBed,
+            req.body.qualityRating,
+            req.body.comments
+            );
+        res.type('application/json');
+        res.status(201);
+        res.send(response);
+    } catch (error) {
+        console.log(error);
+    }
 }));
+
 
 export default app;
