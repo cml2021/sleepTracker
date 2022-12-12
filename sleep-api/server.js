@@ -34,6 +34,10 @@ app.post('/diary', asyncHandler(async (req, res) => {
         res.status(201);
         res.send(response);
     } catch (error) {
+        if (error.message === "A diary entry already exists for this date.") {
+            res.status(400);
+            res.send(error.message)
+        }
         console.log(error);
     }
 }));

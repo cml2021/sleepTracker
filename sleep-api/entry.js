@@ -1,6 +1,7 @@
 'use-strict';
 import mongoose, { Schema } from "mongoose";
 import dotenv from "dotenv";
+import { intervalToDuration } from "date-fns";
 
 dotenv.config();
 const DB_URL = process.env.DB_URL;
@@ -58,6 +59,17 @@ const Entry = mongoose.model('Entry', entrySchema);
  * @returns                             Promise that resolves to newly created entry instance
  */
 const createEntry = async (date, timeIntoBed, timeSleepAttempted, sleepDelay, numberAwakenings, durationAwakenings, timeFinalAwakening, timeOutOfBed, qualityRating, comments) => {
+    
+    // check that a diary entry for the date does not already exist
+    const existingEntry = await Entry.findOne({date: date}).exec();
+    if (existingEntry !== null) {
+        throw new Error("A diary entry already exists for this date.")
+    }
+
+    // calculate summary stats
+    const [durationInBed, durationAsleep, sleepEfficiency] = calcStats(timeIntoBed, timeOutOfBed, timeSleepAttempted, timeFinalAwakening);
+
+    // create new entry instance
     const newEntry = new Entry({
         date: date,
         timeIntoBed: timeIntoBed,
@@ -68,10 +80,44 @@ const createEntry = async (date, timeIntoBed, timeSleepAttempted, sleepDelay, nu
         timeFinalAwakening: timeFinalAwakening,
         timeOutOfBed: timeOutOfBed,
         qualityRating: qualityRating,
-        comments: comments
+        comments: comments,
+        durationInBed: durationInBed,
+        durationAsleep: durationAsleep,
+        sleepEfficiency: sleepEfficiency
     });
     const savedEntry = await newEntry.save();
     return savedEntry;
 };
 
-export {clear, createEntry}
+/**
+ * Calculates durationInBed, durationAsleep, and sleepEfficiency for a diary entry
+ * 
+ * @param {date} timeIntoBed            The time the user got into bed
+ * @param {date} timeOutOfBed           The time the user got out of bed for the last time
+ * @param {date} timeSleepAttempted     The time the user attempted to go to sleep
+ * @param {date} timeFinalAwakening     The time the user woke up for the last time
+ * @returns                             Tuple of durationInBed, durationAsleep, and sleepEfficiency
+ */
+const calcStats = (timeIntoBed, timeOutOfBed, timeSleepAttempted, timeFinalAwakening) => {
+    // calculate durationInBed
+    let durationInBed = intervalToDuration({
+        start: new Date(timeIntoBed),
+        end: new Date(timeOutOfBed)
+    })
+    durationInBed = durationInBed['hours'] * 60 + durationInBed['minutes']; // convert to minutes
+
+    // calculate durationAsleep
+    let durationAsleep = intervalToDuration({
+        start: new Date(timeSleepAttempted),
+        end: new Date(timeFinalAwakening)
+    })
+    durationAsleep = durationAsleep['hours'] * 60 + durationAsleep['minutes'] // convert to minutes
+
+    // calculate sleepEfficiency
+    const sleepEfficiency = Math.round((durationAsleep / durationInBed) * 100);
+
+    return [durationInBed, durationAsleep, sleepEfficiency];
+}
+
+
+export {clear, createEntry, calcStats}
