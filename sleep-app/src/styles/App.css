@@ -4,3 +4,16 @@
     overflow-x: hidden;
     margin: 0;
 }
+
+#homepage-main {
+    margin-top: 120px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+#homepage-main-img {
+    width: 40%;
+}
