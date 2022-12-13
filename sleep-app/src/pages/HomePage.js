@@ -1,22 +1,29 @@
 import React from "react";
 import Header from "../components/Header";
+import SleepImage from "../images/sleep.svg"
 
 function HomePage () {
 
-    const tabs = [
+    const tabProps = [
         {
             "name": "Diary",
             "path": "/diary"
          }
     ]
 
-    const button = {
+    const buttonProps = {
         "text": "Log sleep",
-        "path": "/diary"
+        "path": "/diary",
+        "active": true
     }
 
     return (
-        <Header tabs={tabs} button={button}/>
+        <div>
+            <Header tabs={tabProps} button={buttonProps}/>
+            <div id="homepage-main">
+                <img id="homepage-main-img" src={SleepImage} alt="sleeper" />
+            </div>
+        </div>
     )
 }
 
