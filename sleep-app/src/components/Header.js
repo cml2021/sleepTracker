@@ -1,11 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Header.css";
 import Button from "./Button";
 
-function Header ({tabs, button}) {
+function Header({tabs, button}) {
+
+    const navigate = useNavigate();
 
     const headerTabs = tabs.map((tab, i) =>
-        <div className="tab" key={i} path={tab.path} onClick={() => alert(`Opens ${tab.path}`)}>
+        <div className="tab" key={i} onClick={() => navigate(tab.path)}>
             {tab.name}
         </div>
     )
