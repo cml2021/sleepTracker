@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import SleepImage from "../images/sleep.svg"
+import SleepImage from "../assets/sleep.svg"
 import '../styles/App.css';
 
 function HomePage () {
