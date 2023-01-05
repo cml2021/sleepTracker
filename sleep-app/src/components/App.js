@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/diary" element={<DiaryPage />} />
-        <Route path="/add-entry" element={AddEntryPage} />
+        <Route path="/add-entry" element={<AddEntryPage />} />
       </Routes>
     </BrowserRouter>
   );

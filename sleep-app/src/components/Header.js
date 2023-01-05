@@ -20,15 +20,17 @@ function Header({ tabs, button }) {
     if (button !== undefined) {
         return (
             <div className="header">
-                <h1>sleepTracker</h1>
+                <h1 className="title">sleepTracker</h1>
                 <div className="tab-set">{headerTabs}</div>
-                <Button text={button.text} path={button.path} active={button.active} />
+                <div className="button-container">
+                    <Button text={button.text} path={button.path} active={button.active} />
+                </div>
             </div>
         )
     } else {
         return (
             <div className="header">
-                <h1>sleepTracker</h1>
+                <h1 className="title">sleepTracker</h1>
                 <div className="tab-set">{headerTabs}</div>
             </div>
         )

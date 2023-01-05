@@ -17,3 +17,9 @@
 #homepage-main-img {
     width: 40%;
 }
+
+#add-entry-main {
+    margin: 150px 0 0 22%;
+    width: 100%;
+    align-items: left;
+}
