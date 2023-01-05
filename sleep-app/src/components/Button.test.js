@@ -25,5 +25,3 @@ test('renders inactive button', () => {
     expect(screen.getByText("text")).toBeDisabled;
     expect(screen.getByText("text")).toHaveClass("button disabled", {exact: true})
 })
-
-// TODO test clicking on button navigating to path https://www.digitalocean.com/community/tutorials/how-to-test-a-react-app-with-jest-and-react-testing-library
